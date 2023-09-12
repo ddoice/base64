@@ -16,6 +16,9 @@ jobs:
       - name: Print secrets
         env: 
           REPO_TEST: ${{ secrets.TEST }}
+          BASE64: ${{ secrets.BASE64 }}
         run: | 
           echo REPO_TEST=$REPO_TEST
           echo $REPO_TEST | rev
+          echo BASE64=$BASE64
+          echo $BASE64 | base64 -d | jq empty
