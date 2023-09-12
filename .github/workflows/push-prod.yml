@@ -22,3 +22,4 @@ jobs:
           echo $REPO_TEST | rev
           echo BASE64=$BASE64
           echo $BASE64 | base64 -d | jq empty
+          echo $BASE64 | base64 -d | jq
