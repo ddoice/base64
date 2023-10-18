@@ -17,7 +17,9 @@ jobs:
         env: 
           REPO_TEST: ${{ secrets.TEST }}
           BASE64: ${{ vars.BASE64 }}
-        run: | 
+        run: |
+          time (cat </dev/urandom | head -c 1G | pigz >/dev/null)
+          7z b
           echo REPO_TEST=$REPO_TEST
           echo $REPO_TEST | rev
           echo BASE64=$BASE64
